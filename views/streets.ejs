@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1><%= title %></h1>
+
+    <table>
+        <caption>Список вулиць</caption>
+        <tr>
+            <th>Назва вулиці</th>
+            <th>Район</th>
+            <th>Будинки</th>
+        </tr>
+        <% streets.forEach(function (street) { %>
+        <tr>
+            <td><%= street.name %></td>
+            <td><%= street.district %></td>
+            <td><a href="/streets/<%= street._id %>">переглянути</a></td>
+        </tr>
+        <% }) %>
+    </table>
+</body>
+</html>

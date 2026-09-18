@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Будинки на вулиці</h1>
+    <h2><%= street.name %></h2>
+    <p><%= street.district %> район міста Львова</p>
+
+    <table>
+        <caption>Список будинків</caption>
+        <tr>
+            <th>Номер</th>
+            <th>Рік побудови</th>
+            <th>Опис</th>
+        </tr>
+        <% houses.forEach(function (house) { %>
+        <tr>
+            <td><%= house.number %></td>
+            <td><%= house.year %></td>
+            <td><%= house.description %></td>
+        </tr>
+        <% }) %>
+    </table>
+
+    <p><a href="/">&larr; До списку вулиць</a></p>
+</body>
+</html>
