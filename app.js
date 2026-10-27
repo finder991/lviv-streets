@@ -42,6 +42,13 @@ app.get('/streets/:id', async (request, response, next) => {
     }
 })
 
+app.use((request, response) => {
+    response.status(404).render('error', {
+        title: 'Сторінку не знайдено',
+        message: 'Сторінки за адресою ' + request.originalUrl + ' не існує.'
+    })
+})
+
 app.use((err, request, response, next) => {
     console.log(err)
     response.status(500).render('error', {
